@@ -1,0 +1,9 @@
+imbalanced_learn==0.12.4
+imblearn==0.0
+matplotlib==3.10.3
+numpy==2.2.6
+pandas==2.2.3
+scikit_learn==1.6.1
+seaborn==0.13.2
+tensorflow==2.19.0
+tf2onnx==1.16.1
