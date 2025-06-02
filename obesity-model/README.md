@@ -104,10 +104,8 @@ Implementasi mencakup langkah-langkah berikut:
 
 ```
 .
-├── obesity-model.py          # Script Python utama
-├── obesity-model.ipynb  # Jupyter notebook
+├── obesity-model.ipynb                 # Jupyter notebook
 ├── saved_model_obesity/                # Model TensorFlow tersimpan
-├── model_obesity.onnx                  # Model dalam format ONNX
 └── README.md                           # Dokumentasi
 ```
 

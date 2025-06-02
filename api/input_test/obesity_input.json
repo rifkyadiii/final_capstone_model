@@ -1,0 +1,18 @@
+{
+    "Gender": "Male",
+    "Age": 30,
+    "Height": 1.75,
+    "Weight": 85,
+    "family_history_with_overweight": "yes",
+    "FAVC": "yes",
+    "FCVC": 2.5,
+    "NCP": 3.0,
+    "CAEC": "Sometimes",
+    "SMOKE": "no",
+    "CH2O": 2.0,
+    "SCC": "no",
+    "FAF": 1.5,
+    "TUE": 0.5,
+    "CALC": "Sometimes",
+    "MTRANS": "Public_Transportation"
+}

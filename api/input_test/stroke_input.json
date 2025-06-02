@@ -1,0 +1,12 @@
+{
+    "gender": "Female",
+    "age": 65,
+    "hypertension": 1,
+    "heart_disease": 0,
+    "ever_married": "Yes",
+    "work_type": "Private",
+    "Residence_type": "Urban",
+    "avg_glucose_level": 180.50,
+    "bmi": 32.1,
+    "smoking_status": "formerly smoked"
+}

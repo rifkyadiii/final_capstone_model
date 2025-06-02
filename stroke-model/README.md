@@ -109,10 +109,8 @@ Implementasi mencakup langkah-langkah berikut:
 
 ```
 .
-├── stroke-model.py             # Script Python utama
-├── stroke-model.ipynb            # Jupyter notebook
+├── stroke-model.ipynb              # Jupyter notebook
 ├── saved_model_stroke/              # Model TensorFlow tersimpan
-├── model_stroke.onnx                # Model dalam format ONNX
 └── README.md                        # Dokumentasi
 ```
 
