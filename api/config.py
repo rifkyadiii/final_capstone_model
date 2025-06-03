@@ -76,3 +76,18 @@ class Config:
     DIABETES_NUMERIC_FEATURES = ['age', 'bmi', 'HbA1c_level', 'blood_glucose_level']
     DIABETES_CATEGORICAL_FEATURES = ['gender', 'smoking_history']
     DIABETES_BINARY_FEATURES = ['hypertension', 'heart_disease']
+
+    #Fitur Anemia
+    ANEMIA_MODEL_DIR = os.path.join(BASE_PROJECT_DIR, 'anemia-model', 'saved_model_anemia')
+    ANEMIA_MODEL_PATH = os.path.join(ANEMIA_MODEL_DIR, 'anemia_model.keras')
+    ANEMIA_SCALER_PATH = os.path.join(ANEMIA_MODEL_DIR, 'anemia_scaler.pkl')
+    ANEMIA_LABEL_ENCODERS_PATH = os.path.join(ANEMIA_MODEL_DIR, 'anemia_label_encoders.pkl')
+    ANEMIA_INPUT_FEATURES_ORDERED_PATH = os.path.join(ANEMIA_MODEL_DIR, 'anemia_input_features_ordered.json')
+
+    # Heart Attack Model Configuration
+    HEART_ATTACK_MODEL_DIR = os.path.join(BASE_PROJECT_DIR, 'heart-attack-model', 'saved_model_heart_attack')
+    HEART_ATTACK_MODEL_PATH = os.path.join(HEART_ATTACK_MODEL_DIR, 'heart_attack_model.keras')
+    HEART_ATTACK_SCALER_PATH = os.path.join(HEART_ATTACK_MODEL_DIR, 'heart_attack_scaler.pkl')
+    HEART_ATTACK_FEATURE_LE_DICT_PATH = os.path.join(HEART_ATTACK_MODEL_DIR, 'heart_attack_feature_le_dict.pkl')
+    HEART_ATTACK_TARGET_LE_PATH = os.path.join(HEART_ATTACK_MODEL_DIR, 'heart_attack_target_le.pkl')
+    HEART_ATTACK_INPUT_FEATURES_ORDERED_PATH = os.path.join(HEART_ATTACK_MODEL_DIR, 'heart_attack_input_features_ordered.json')

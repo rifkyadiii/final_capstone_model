@@ -1,0 +1,14 @@
+{
+    "age": 65,
+    "gender": "Male",
+    "hypertension": 1,
+    "diabetes": 0,
+    "obesity": 1,
+    "waist_circumference": 102.5,
+    "smoking_status": "Past",
+    "alcohol_consumption": "High",
+    "triglycerides": 180.0,
+    "previous_heart_disease": 1,
+    "medication_usage": 0,
+    "participated_in_free_screening": 1
+  }
