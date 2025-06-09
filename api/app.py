@@ -34,11 +34,5 @@ def home():
         }
     })
 
-if __name__ == '__main__':
-    print(f"Current working directory (app.py): {os.getcwd()}")
-    # Example path check for debugging
-    print(f"Path Config.HEART_ATTACK_MODEL_PATH: {Config.HEART_ATTACK_MODEL_PATH}")
-    print(f"Apakah HEART_ATTACK_MODEL_PATH ada? {os.path.exists(Config.HEART_ATTACK_MODEL_PATH)}")
-    # ... (add other path checks if needed) ...
-
-    app.run(host='0.0.0.0', port=5000, debug=True)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8000)))
