@@ -31,7 +31,7 @@ from tensorflow.keras.callbacks import EarlyStopping
 
 
 # Load dataset
-df = pd.read_csv('../dataset/heart_attack_data.csv')
+df = pd.read_csv('/dataset/heart_attack_data.csv')
 
 # Basic data exploration
 print("Dataset shape:", df.shape)
@@ -366,11 +366,11 @@ plt.show()
 try:
     # If running as a script .py
     current_script_path = os.path.dirname(os.path.abspath(__file__))
-    PROJECT_ROOT = os.path.abspath(os.path.join(current_script_path, '..'))
+    PROJECT_ROOT = os.path.abspath(os.path.join(current_script_path, ''))
 except NameError:
     # If running in an interactive environment like Jupyter Notebook
     # Assumes notebook is in a subdirectory like 'capstone_model/notebooks/'
-    PROJECT_ROOT = os.path.abspath(os.path.join(os.getcwd(), '..'))
+    PROJECT_ROOT = os.path.abspath(os.path.join(os.getcwd(), ''))
     # If your notebook is directly in 'capstone_model/', use:
     # PROJECT_ROOT = os.getcwd()
 
@@ -418,7 +418,7 @@ print("\n--- Penyimpanan Artefak Model Heart Attack Selesai ---")
 
 # Referensi fitur input untuk API (nama dan tipe data asli sebelum preprocessing)
 print(f"\nFitur yang diharapkan API untuk model Heart Attack ({len(input_features_ordered)} fitur):")
-df_original_for_types = pd.read_csv('../dataset/heart_attack_data.csv')
+df_original_for_types = pd.read_csv('/dataset/heart_attack_data.csv')
 for feature_name in input_features_ordered:
     if feature_name in df_original_for_types.columns:
         original_dtype = df_original_for_types[feature_name].dtype
@@ -441,11 +441,11 @@ try:
     # If running as a script .py
     # This assumes the inference script might be in a similar location or you adjust as needed
     current_script_path = os.path.dirname(os.path.abspath(__file__))
-    PROJECT_ROOT = os.path.abspath(os.path.join(current_script_path, '..'))
+    PROJECT_ROOT = os.path.abspath(os.path.join(current_script_path, ''))
 except NameError:
     # If running in an interactive environment like Jupyter Notebook
     # Adjust if your notebook for inference is in a different location
-    PROJECT_ROOT = os.path.abspath(os.path.join(os.getcwd(), '..'))
+    PROJECT_ROOT = os.path.abspath(os.path.join(os.getcwd(), ''))
     # If your notebook is directly in 'capstone_model/', use:
     # PROJECT_ROOT = os.getcwd()
 

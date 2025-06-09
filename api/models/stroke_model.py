@@ -1,5 +1,5 @@
 # models/stroke_model.py
-from ..config import Config
+from config import Config
 from .loader import load_artifacts
 
 print("\n--- Memuat Model Stroke ---")

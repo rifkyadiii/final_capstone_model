@@ -1,9 +1,9 @@
 # routes/diabetes.py
 from flask import Blueprint, request, jsonify
 import traceback
-from ..config import Config
-from ..utils.preprocessing import preprocess_general_input_data
-from ..models.diabetes_model import (
+from config import Config
+from utils.preprocessing import preprocess_general_input_data
+from models.diabetes_model import (
     diabetes_model, diabetes_scaler, diabetes_feature_encoders, 
     diabetes_target_encoder, DIABETES_ARTIFACTS_LOADED
 )

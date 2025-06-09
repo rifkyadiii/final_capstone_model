@@ -1,7 +1,7 @@
 # models/anemia_model.py
 import os
 import json
-from ..config import Config
+from config import Config
 from .loader import load_artifacts # Asumsi loader.py ada di package 'models'
 
 print("\n--- Memuat Model Anemia ---")

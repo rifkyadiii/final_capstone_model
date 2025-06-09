@@ -2,9 +2,9 @@
 from flask import Blueprint, request, jsonify
 import numpy as np
 import traceback
-from ..config import Config
-from ..utils.preprocessing import preprocess_general_input_data
-from ..models.obesity_model import obesity_model, obesity_scaler, obesity_le_dict, obesity_target_le, OBESITY_ARTIFACTS_LOADED
+from config import Config
+from utils.preprocessing import preprocess_general_input_data
+from models.obesity_model import obesity_model, obesity_scaler, obesity_le_dict, obesity_target_le, OBESITY_ARTIFACTS_LOADED
 
 obesity_bp = Blueprint('obesity_bp', __name__)
 

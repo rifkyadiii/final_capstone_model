@@ -2,7 +2,7 @@
 
 import os
 import json
-from ..config import Config  # Relative import
+from config import Config  # Relative import
 from .loader import load_artifacts # Relative import
 
 print("\n--- Memuat Model Heart Attack ---")

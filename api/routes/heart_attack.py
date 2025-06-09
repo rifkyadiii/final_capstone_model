@@ -2,9 +2,9 @@
 from flask import Blueprint, request, jsonify
 import numpy as np
 import traceback
-from ..config import Config
-from ..utils.preprocessing import preprocess_general_input_data
-from ..models.heart_attack_model import (
+from config import Config
+from utils.preprocessing import preprocess_general_input_data
+from models.heart_attack_model import (
     ha_model, ha_scaler, ha_feature_le_dict, ha_target_le,
     ha_input_features_ordered, ha_categorical_features,
     ha_numeric_features_to_scale, ha_binary_features,

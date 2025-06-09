@@ -1,9 +1,9 @@
 # routes/cardiovascular.py
 from flask import Blueprint, request, jsonify
 import traceback
-from ..config import Config
-from ..utils.preprocessing import preprocess_general_input_data, handle_cardiovascular_features
-from ..models.cardiovascular_model import cardiovascular_model, cardiovascular_scaler, CARDIOVASCULAR_ARTIFACTS_LOADED
+from config import Config
+from utils.preprocessing import preprocess_general_input_data, handle_cardiovascular_features
+from models.cardiovascular_model import cardiovascular_model, cardiovascular_scaler, CARDIOVASCULAR_ARTIFACTS_LOADED
 
 cardiovascular_bp = Blueprint('cardiovascular_bp', __name__)
 

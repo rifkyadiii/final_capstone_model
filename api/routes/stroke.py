@@ -2,9 +2,9 @@
 from flask import Blueprint, request, jsonify
 import numpy as np
 import traceback
-from ..config import Config
-from ..utils.preprocessing import preprocess_general_input_data
-from ..models.stroke_model import stroke_model, stroke_scaler, stroke_le_dict, STROKE_ARTIFACTS_LOADED
+from config import Config
+from utils.preprocessing import preprocess_general_input_data
+from models.stroke_model import stroke_model, stroke_scaler, stroke_le_dict, STROKE_ARTIFACTS_LOADED
 
 stroke_bp = Blueprint('stroke_bp', __name__)
 

@@ -2,9 +2,9 @@
 from flask import Blueprint, request, jsonify
 import numpy as np
 import traceback
-from ..config import Config # Relatif import dari package yang sama
-from ..utils.preprocessing import preprocess_general_input_data
-from ..models.anemia_model import (
+from config import Config # Relatif import dari package yang sama
+from utils.preprocessing import preprocess_general_input_data
+from models.anemia_model import (
     anemia_model, anemia_scaler, anemia_label_encoders,
     anemia_input_features_ordered, anemia_categorical_features,
     anemia_numeric_features_to_scale, ANEMIA_ARTIFACTS_LOADED,

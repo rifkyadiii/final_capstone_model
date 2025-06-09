@@ -1,5 +1,5 @@
 # models/obesity_model.py
-from ..config import Config  # Menggunakan relative import
+from config import Config  # Menggunakan relative import
 from .loader import load_artifacts # Menggunakan relative import
 
 print("--- Memuat Model Obesitas ---")
