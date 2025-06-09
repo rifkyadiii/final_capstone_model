@@ -2,13 +2,13 @@ from flask import Flask, jsonify
 import os
 
 # Import Blueprints using explicit relative import
-from .routes.obesity import obesity_bp
-from .routes.stroke import stroke_bp
-from .routes.cardiovascular import cardiovascular_bp
-from .routes.diabetes import diabetes_bp
-from .routes.anemia import anemia_bp
-from .routes.heart_attack import heart_attack_bp
-from .config import Config
+from routes.obesity import obesity_bp
+from routes.stroke import stroke_bp
+from routes.cardiovascular import cardiovascular_bp
+from routes.diabetes import diabetes_bp
+from routes.anemia import anemia_bp
+from routes.heart_attack import heart_attack_bp
+from config import Config
 
 app = Flask(__name__)
 
