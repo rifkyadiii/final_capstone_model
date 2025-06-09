@@ -11,25 +11,19 @@ Dataset stroke prediction berisi data pasien dengan informasi medis dan demograf
 
 Dataset mencakup atribut berikut:
 
-1. **Demografis**:
-   - `id`: ID unik pasien (dihapus dalam preprocessing)
-   - `gender`: Jenis kelamin (Male/Female/Other)
-   - `age`: Usia pasien
-   - `Residence_type`: Tipe tempat tinggal (Rural/Urban)
-
-2. **Kondisi Medis**:
-   - `hypertension`: Memiliki hipertensi (0=tidak, 1=ya)
-   - `heart_disease`: Memiliki penyakit jantung (0=tidak, 1=ya)
-   - `avg_glucose_level`: Rata-rata kadar glukosa dalam darah
-   - `bmi`: Body Mass Index
-
-3. **Gaya Hidup**:
-   - `ever_married`: Status pernikahan (Yes/No)
-   - `work_type`: Jenis pekerjaan (Private, Self-employed, Govt_job, children, Never_worked)
-   - `smoking_status`: Status merokok (formerly smoked, never smoked, smokes, Unknown)
-
-4. **Target**:
-   - `stroke`: Pernah mengalami stroke (1) atau tidak (0)
+| **Kategori**        | **Nama Fitur (Kolom)** | **Deskripsi**                        | **Tipe Data** | **Cara Input / Keterangan**                                                 |
+| ------------------- | ---------------------- | ------------------------------------ | ------------- | --------------------------------------------------------------------------- |
+| **Data Demografis** | `age`                  | Usia pasien                          | Integer       | Input langsung. Contoh: 16                                                  |
+|                     | `gender`               | Jenis kelamin                        | String        | Pilihan: `Male`, `Female`, `Other`                                          |
+|                     | `ever_married`         | Status pernikahan                    | String        | Pilihan: `Yes`, `No`                                                        |
+|                     | `work_type`            | Jenis pekerjaan                      | String        | Pilihan: `Private`, `Self-employed`, `Govt_job`, `children`, `Never_worked` |
+|                     | `Residence_type`       | Tipe tempat tinggal                  | String        | Pilihan: `Urban`, `Rural`                                                   |
+| **Kondisi Medis**   | `hypertension`         | Riwayat hipertensi                   | Integer       | 0: Tidak, 1: Ya                                                             |
+|                     | `heart_disease`        | Riwayat penyakit jantung             | Integer       | 0: Tidak, 1: Ya                                                             |
+|                     | `avg_glucose_level`    | Rata-rata kadar gula darah           | Float         | Dalam mg/dL – dari hasil tes darah. Contoh 228.69                                |
+|                     | `bmi`                  | Body Mass Index (Indeks Massa Tubuh) | Float         | Dalam kg/m² – dihitung dari tinggi dan berat badan. Contoh: 35.2                    |
+| **Gaya Hidup**      | `smoking_status`       | Status merokok                       | String        | Pilihan: `never smoked`, `formerly smoked`, `smokes`, `Unknown`             |
+| **Target**          | `stroke`               | Riwayat stroke                       | Integer       | 0: Tidak Stroke, 1: Stroke                                                  |
 
 ## Alur Kerja
 
