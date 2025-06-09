@@ -8,7 +8,7 @@ class Config:
     # Asumsi: Struktur folder aplikasi (app.py, config.py, models/, routes/, utils/)
     # berada di satu direktori (misalnya, 'api/'), dan folder model
     # (misal, 'obesity-model') adalah sibling dari direktori tersebut.
-    BASE_PROJECT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '')) # Naik satu level ke root proyek
+    BASE_PROJECT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..')) # Naik satu level ke root proyek
     
     OBESITY_MODEL_DIR = os.path.join(BASE_PROJECT_DIR, 'obesity-model', 'saved_model_obesity')
     STROKE_MODEL_DIR = os.path.join(BASE_PROJECT_DIR, 'stroke-model', 'saved_model_stroke')
