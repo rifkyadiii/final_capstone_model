@@ -1,4 +1,5 @@
 from flask import Flask, jsonify
+from flask_cors import CORS
 import os
 
 # Import Blueprints using explicit relative import
@@ -11,6 +12,7 @@ from routes.heart_attack import heart_attack_bp
 from config import Config
 
 app = Flask(__name__)
+CORS(app)
 
 # Register Blueprints
 app.register_blueprint(obesity_bp)
@@ -22,7 +24,7 @@ app.register_blueprint(heart_attack_bp)
 @app.route('/', methods=['GET'])
 def home():
     return jsonify({
-        "message": "Selamat Datang di API Prediksi Kesehatan Modular!",
+        "message": "Selamat Datang di API HealthGuard!",
         "endpoints": {
             "prediksi_obesitas": "/predict/obesity (POST)",
             "prediksi_stroke": "/predict/stroke (POST)",
