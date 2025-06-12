@@ -38,9 +38,9 @@ def predict_stroke_route():
         predicted_class_label = 1 if prob_stroke >= 0.5 else 0 # Asumsi threshold 0.5
         
         return jsonify({
-            "predicted_class": "Stroke" if predicted_class_label == 1 else "No Stroke",
-            "prediction_label": predicted_class_label,
-            "probabilities": {"no_stroke": prob_no_stroke, "stroke": prob_stroke}
+            "prediction": str(predicted_class_label), 
+            "prediction_label_numeric": predicted_class_label,
+            "probability_of_stroke": prob_stroke 
         })
 
     except ValueError as ve:

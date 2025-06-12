@@ -44,25 +44,25 @@ def predict_heart_attack_route():
         )
 
         # Make prediction
-        prediction_proba_raw = ha_model.predict(processed_df)
+        prediction_proba_raw = ha_model.predict(processed_df)[0]
         
-        # Get probabilities for each class
-        probabilities_dict = {}
-        if ha_target_le:
-            for i, class_name_original in enumerate(ha_target_le.classes_):
-                 probabilities_dict[str(class_name_original)] = float(prediction_proba_raw[0][i])
-        else:
-            probabilities_dict["Class_0_Prob"] = float(prediction_proba_raw[0][0])
-            if prediction_proba_raw.shape[1] > 1:
-                probabilities_dict["Class_1_Prob"] = float(prediction_proba_raw[0][1])
+        # Tentukan indeks kelas prediksi (0 atau 1)
+        predicted_class_idx = int(np.argmax(prediction_proba_raw))
 
-        predicted_class_idx = np.argmax(prediction_proba_raw[0])
-        predicted_class_original_label = HEART_ATTACK_TARGET_CLASSES_MAP.get(int(predicted_class_idx), "Label Tidak Diketahui")
+        # Asumsi: Indeks 1 adalah kelas positif ('more chance of heart attack')
+        # Ambil probabilitas untuk kelas positif tersebut
+        # Pastikan model Anda memiliki 2 output probabilitas
+        prob_heart_attack = 0.0
+        if len(prediction_proba_raw) > 1:
+            prob_heart_attack = float(prediction_proba_raw[1])
+        else:
+            # Handle kasus jika model hanya mengeluarkan satu probabilitas
+            prob_heart_attack = float(prediction_proba_raw[0])
 
         return jsonify({
-            "predicted_class_label": predicted_class_original_label,
-            "predicted_class_index": int(predicted_class_idx),
-            "probabilities": probabilities_dict
+            "prediction": str(predicted_class_idx),
+            "prediction_label_numeric": predicted_class_idx,
+            "probability_of_heart_attack": prob_heart_attack
         })
 
     except ValueError as ve:
