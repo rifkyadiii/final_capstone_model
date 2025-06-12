@@ -247,12 +247,9 @@ Untuk berinteraksi dengan API yang sudah di-deploy, kirim request `POST` ke endp
     * **Response Sukses**:
     ```json
     {
-        "predicted_class_index": 1,
-        "predicted_class_label": "1",
-        "probabilities": {
-            "0": 0.1078636571764946,
-            "1": 0.8921363353729248
-        }
+        "prediction": "0",
+        "prediction_label_numeric": 0,
+        "probability_of_heart_attack": 0.44310927391052246
     }
     ```
 
@@ -321,12 +318,9 @@ Untuk berinteraksi dengan API yang sudah di-deploy, kirim request `POST` ke endp
     * **Response Sukses**:
     ```json
     {
-        "predicted_class": "Stroke",
-        "prediction_label": 1,
-        "probabilities": {
-            "no_stroke": 0.08416252583265305,
-            "stroke": 0.9158374667167664
-        }
+        "prediction": "1",
+        "prediction_label_numeric": 1,
+        "probability_of_stroke": 0.9158374667167664
     }
     ```
 
