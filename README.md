@@ -68,17 +68,17 @@ Proyek ini dibangun sebagai bagian dari **Tugas Akhir (Capstone Project) DBS Cod
 
 Proyek ini dikerjakan oleh tim yang terdiri dari 3 anggota:
 
-  * **[Nama Anggota 1]** - [GitHub Profile](https://github.com/rifkyadiii)
+  * **[MC222D5Y1146 Moch Rifky Aulia Adikusumah]** - [GitHub Profile](https://github.com/rifkyadiii)
 
       * Model Prediksi Obesitas [https://github.com/rifkyadiii/final_capstone_model/tree/main/obesity-model]
       * Model Prediksi Stroke [https://github.com/rifkyadiii/final_capstone_model/tree/main/stroke-model]
 
-  * **[Nama Anggota 2]** - [GitHub Profile](https://github.com/gevirazahrashofa)
+  * **[MC222D5X1148 Gevira Zahra Shofa]** - [GitHub Profile](https://github.com/gevirazahrashofa)
 
       * Model Prediksi Diabetes [https://github.com/gevirazahrashofa/proyek-capstone-diabetes]
       * Model Prediksi Penyakit Kardiovaskular [https://github.com/gevirazahrashofa/proyek-capstone-cardiovascular]
 
-  * **[Nama Anggota 3]** - [GitHub Profile](https://github.com/GhaniHD)
+  * **[MC222D5Y1149 Ghani Husna Darmawan]** - [GitHub Profile](https://github.com/GhaniHD)
 
       * Model Prediksi Anemia [https://github.com/GhaniHD/Model_Anemia]
       * Model Prediksi Serangan Jantung [https://github.com/GhaniHD/Model_Heart_Attack]
