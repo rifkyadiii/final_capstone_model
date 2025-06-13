@@ -49,22 +49,25 @@ def predict_anemia_route():
         )
 
         # Prediksi
-        prediction_proba = anemia_model.predict(processed_df) # Outputnya adalah probabilitas per kelas
+        prediction_proba = anemia_model.predict(processed_df)[0]
         
-        # Ambil probabilitas untuk kelas 0 dan kelas 1
-        prob_class_0 = float(prediction_proba[0][0]) # Probabilitas "Tidak Terkena Anemia"
-        prob_class_1 = float(prediction_proba[0][1]) # Probabilitas "Terkena Anemia"
+        # Tentukan indeks kelas prediksi (0: Tidak Anemia, 1: Anemia)
+        predicted_class_idx = int(np.argmax(prediction_proba))
 
-        predicted_class_idx = np.argmax(prediction_proba[0]) # 0 atau 1
-        predicted_class_label = ANEMIA_TARGET_CLASSES.get(predicted_class_idx, "Label tidak diketahui")
+        # Asumsi: Indeks 1 adalah kelas positif ('Terkena Anemia')
+        # Ambil probabilitas untuk kelas positif tersebut
+        prob_anemia = 0.0
+        if len(prediction_proba) > 1:
+            prob_anemia = float(prediction_proba[1])
+        else:
+            # Penanganan jika model hanya mengeluarkan satu probabilitas
+            prob_anemia = float(prediction_proba[0])
 
+        # Kembalikan respons JSON dalam format standar yang diinginkan
         return jsonify({
-            "predicted_class_label": predicted_class_label,
-            "predicted_class_index": int(predicted_class_idx),
-            "probabilities": {
-                ANEMIA_TARGET_CLASSES[0]: prob_class_0,
-                ANEMIA_TARGET_CLASSES[1]: prob_class_1
-            }
+            "prediction": str(predicted_class_idx),
+            "prediction_label_numeric": predicted_class_idx,
+            "probability_of_anemia": prob_anemia
         })
 
     except ValueError as ve:
