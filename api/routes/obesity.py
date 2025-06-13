@@ -36,23 +36,16 @@ def predict_obesity_route():
         # Prediksi (Model akan menghasilkan probabilitas untuk setiap kelas obesitas)
         prediction_proba = obesity_model.predict(processed_df)[0]
 
-        # Dapatkan indeks kelas dengan probabilitas tertinggi
         predicted_class_idx = int(np.argmax(prediction_proba))
 
-        # Dapatkan label teks dari indeks (misalnya, "Normal_Weight", "Obesity_Type_I")
+        prediction_confidence = float(prediction_proba[predicted_class_idx])
+
         predicted_class_label = obesity_target_le.inverse_transform([predicted_class_idx])[0]
 
-        # Buat dictionary yang memetakan setiap label kelas ke probabilitasnya
-        probabilities_dict = {
-            obesity_target_le.inverse_transform([i])[0]: float(prob)
-            for i, prob in enumerate(prediction_proba)
-        }
-
-        # Kembalikan respons JSON dalam format yang disesuaikan untuk multi-kelas
         return jsonify({
             "prediction": predicted_class_label,
             "prediction_label_numeric": predicted_class_idx,
-            "probabilities": probabilities_dict
+            "probabilities": prediction_confidence
         })
 
     except ValueError as ve:

@@ -35,22 +35,23 @@ def predict_cardiovascular_route():
         probability = cardiovascular_model.predict(processed_df)[0][0] # Ambil probabilitas dari output model
         probability = float(probability) # Konversi ke float standar
 
-        # Tentukan label prediksi berdasarkan threshold (misal 0.5)
-        prediction_label = "High Risk" if probability > 0.5 else "Low Risk" # Atau "Disease" / "No Disease"
-        
-        # Tentukan level risiko (contoh)
+        prediction_numeric_label = 1 if probability > 0.5 else 0
+
+        # Tentukan label teks (High/Medium/Low) berdasarkan rentang probabilitas
         if probability > 0.7:
-            risk_level_str = 'High'
-        elif probability > 0.3: # Contoh batas untuk medium
-            risk_level_str = 'Medium'
+            prediction_text_label = 'High Risk'
+        elif probability > 0.3:
+            prediction_text_label = 'Medium Risk'
         else:
-            risk_level_str = 'Low'
-            
+            prediction_text_label = 'Low Risk'
+
+        # Kembalikan respons sesuai format spesifik yang terakhir diminta
         return jsonify({
-            'probability_of_disease': probability,
-            'prediction': prediction_label, # Label berdasarkan threshold 0.5
-            'risk_level': risk_level_str    # Level risiko kualitatif
+            "prediction": prediction_text_label,
+            "prediction_label_numeric": prediction_numeric_label,
+            "probability_of_cardiovascular_disease": probability
         })
+
 
     except ValueError as ve:
         return jsonify({"error": f"Kesalahan validasi atau preprocessing data kardiovaskular: {str(ve)}"}), 400

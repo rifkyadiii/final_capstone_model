@@ -34,10 +34,6 @@ def predict_anemia_route():
             return jsonify({"error": f"Fitur yang hilang dalam input: {missing_features} untuk prediksi anemia."}), 400
 
         # Preprocess data
-        # 'le_dict' adalah anemia_label_encoders
-        # 'categorical_features' adalah anemia_categorical_features (diturunkan di anemia_model.py)
-        # 'numeric_features_to_scale' adalah anemia_numeric_features_to_scale (diturunkan)
-        # 'all_features_ordered' adalah anemia_input_features_ordered
         processed_df = preprocess_general_input_data(
             data_dict=data,
             all_features_ordered=anemia_input_features_ordered,
@@ -51,11 +47,8 @@ def predict_anemia_route():
         # Prediksi
         prediction_proba = anemia_model.predict(processed_df)[0]
         
-        # Tentukan indeks kelas prediksi (0: Tidak Anemia, 1: Anemia)
         predicted_class_idx = int(np.argmax(prediction_proba))
 
-        # Asumsi: Indeks 1 adalah kelas positif ('Terkena Anemia')
-        # Ambil probabilitas untuk kelas positif tersebut
         prob_anemia = 0.0
         if len(prediction_proba) > 1:
             prob_anemia = float(prediction_proba[1])

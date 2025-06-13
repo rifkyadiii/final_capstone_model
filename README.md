@@ -186,9 +186,9 @@ Untuk berinteraksi dengan API yang sudah di-deploy, kirim request `POST` ke endp
     * **Response Sukses**:
     ```json
     {
-        "prediction": "High Risk", // (0: Low Risk, 1: High Risk)
-        "probability_of_disease": 0.5466656684875488,
-        "risk_level": "Medium"
+        "prediction": "High Risk", //probability > 7 = High Risk, probability > 3 = Medium Risk, probability > 7 = Low Risk
+        "prediction_label_numeric": 1,
+        "probability_of_cardiovascular_disease": 0.85
     }
     ```
 
@@ -280,16 +280,8 @@ Untuk berinteraksi dengan API yang sudah di-deploy, kirim request `POST` ke endp
     ```json
     {
         "prediction": "Overweight_Level_II",
-        "prediction_label_numeric": 6,
-        "probabilities": {
-            "Insufficient_Weight": 1.6102877919976777e-09,
-            "Normal_Weight": 0.00028047815430909395,
-            "Obesity_Type_I": 0.0029356349259614944,
-            "Obesity_Type_II": 5.424514711194206e-06,
-            "Obesity_Type_III": 3.461773445678773e-08,
-            "Overweight_Level_I": 0.47164449095726013,
-            "Overweight_Level_II": 0.5251338481903076
-        }
+        "prediction_label_numeric": 3,
+        "probabilities": 0.55
     }
     ```
 
