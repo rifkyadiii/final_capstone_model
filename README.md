@@ -279,7 +279,8 @@ Untuk berinteraksi dengan API yang sudah di-deploy, kirim request `POST` ke endp
     * **Response Sukses**:
     ```json
     {
-        "predicted_class": "Overweight_Level_II",
+        "prediction": "Overweight_Level_II",
+        "prediction_label_numeric": 6,
         "probabilities": {
             "Insufficient_Weight": 1.6102877919976777e-09,
             "Normal_Weight": 0.00028047815430909395,
