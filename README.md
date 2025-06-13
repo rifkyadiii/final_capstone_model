@@ -156,12 +156,9 @@ Untuk berinteraksi dengan API yang sudah di-deploy, kirim request `POST` ke endp
     * **Response Sukses**:
     ```json
     {
-        "predicted_class_index": 1,
-        "predicted_class_label": "Terkena Anemia",
-        "probabilities": {
-            "Terkena Anemia": 0.9999997615814209,
-            "Tidak Terkena Anemia": 2.5882675913635467e-07
-        }
+        "prediction": "1",
+        "prediction_label_numeric": 1,
+        "probability_of_anemia": 0.9999997615814209
     }
     ```
 
@@ -216,7 +213,7 @@ Untuk berinteraksi dengan API yang sudah di-deploy, kirim request `POST` ke endp
     * **Response Sukses**:
     ```json
     {
-        "prediction": "0", // (0: Tidak Diabetes, 1: Diabetes)
+        "prediction": "0",
         "prediction_label_numeric": 0,
         "probability_of_diabetes": 0.04034673422574997
     }
